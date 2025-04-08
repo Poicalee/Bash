@@ -16,15 +16,15 @@ read operacja
 
 case $operacja in
     1)
-        wynik=$(echo "$liczba1 + $iczba2" | bc)
+         wynik=$(($liczba1 + $liczba2))
         znak="+"
         ;;
     2)
-        wynik=$(echo "$liczba1 - $liczba2" | bc)
+         wynik=$(($liczba1 - $liczba2))
         znak="-"
         ;;
     3)
-        wynik=$(echo "$liczba1 * $liczba2" | bc)
+        wynik=$(($liczba1 * $liczba2))
         znak="*"
         ;;
     4)
@@ -32,7 +32,7 @@ case $operacja in
             echo "Błąd: Nie można dzielić przez zero!"
             exit 1
         fi
-        wynik=$(echo "scale=2; $liczba1 / $liczba2" | bc)
+        wynik=$(echo "scale=2; $liczba1 / $liczba2")
         znak="/"
         ;;
     *)
